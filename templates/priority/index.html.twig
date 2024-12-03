@@ -1,0 +1,23 @@
+{# Étend le layout de base pour partager la structure commune (header, footer, etc.) #}
+{% extends 'base.html.twig' %}
+
+{# Définit le titre de la page #}
+{% block title %}Hello PriorityController!{% endblock %}
+
+{# Début du bloc principal du corps de la page #}
+{% block body %}
+
+    <div class="example-wrapper">
+
+        {# Lien vers la page de création de priorités. Utilise la route `create_priority`. #}
+        <a href="{{ path('create_priority') }}">Créer une priorité</a>
+
+        {# Parcourt toutes les priorités passées à la vue.
+       Affiche le nom et le niveau de chaque priorité. #}
+        {% for priority in priorities %}
+            <h1>{{ priority.name }}</h1> {# Affiche le nom de la priorité. #}
+            <p>{{ priority.level }}</p> {# Affiche le niveau de la priorité. #}
+        {% endfor %}
+
+    </div>
+{% endblock %}

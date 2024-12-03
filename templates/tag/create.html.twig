@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TagController!{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        {{ form_start(formView, {'attr': {'class' : 'needs-validation'}}) }}
+
+        {{ form_widget(formView, {'attr': {'class': 'form-control'}}) }}
+
+        {{ form_end(formView) }}
+    </div>
+{% endblock %}
