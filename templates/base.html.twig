@@ -15,17 +15,37 @@
     {% endblock %}
 </head>
 <header>
-    <ul>
-        <li>
-            <a href="{{ path('app_tag') }}">Tag</a>
-        </li>
-        <li>
-            <a href="{{ path('app_statut') }}">Statut</a>
-        </li>
-        <li>
-            <a href="{{ path('app_priority') }}">Priorité</a>
-        </li>
-    </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('home') }}">Task manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_tag') }}">Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_statut') }}">Statuts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_priority') }}">Priorités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_project') }}">Projets</a>
+                    </li>
+                </ul>
+
+                <!-- Search Form -->
+                <form class="d-flex" method="get" action="">
+                    <input class="form-control me-2" type="search" name="search" placeholder="Rechercher..." aria-label="Rechercher" value="{{ app.request.query.get('search') }}">
+                    <button class="btn btn-outline-light" type="submit">Rechercher</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 </header>
 <body>
 {% block body %}{% endblock %}
