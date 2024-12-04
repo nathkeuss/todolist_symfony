@@ -8,19 +8,25 @@ body {
     margin-bottom: 10px;
     padding: 6px;
     text-decoration: none;
-    border-radius: 1.5rem;
+    border-radius: 0.5rem;
     background-color: white;
     border: solid 2px black;
-    color: black;
+    color: rgba(32, 32, 42, 1);
     transition: color 0.3s, background-color 0.3s;
 }
 
 .button-create:hover {
-    background-color: black;
+    background-color: rgba(32, 32, 42, 1);
     color: white;
     border: solid 2px white;
 }
 
 .button-create:active {
     color: pink;
+}
+
+.project {
+    background-color: black;
+    width: 70%;
+    margin: auto;
 }

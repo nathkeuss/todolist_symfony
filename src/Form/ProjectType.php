@@ -21,7 +21,7 @@ class ProjectType extends AbstractType
 
             ->add('name', TextType::class)
             ->add('description', TextAreaType::class)
-            ->add('image', FileType::class)
+            ->add('image', null)
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
                 'multiple' => true,

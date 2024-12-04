@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectController!{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        {{ form_start(project_form, {'attr': {'class' : 'needs-validation'}}) }}
+
+        {{ form_widget(project_form, {'attr': {'class': 'form-control'}}) }}
+
+        {{ form_end(project_form) }}
+    </div>
+
+    <div class="example-wrapper mt-5">
+
+        {{ form_start(task_form, {'attr': {'class' : 'needs-validation'}}) }}
+
+        {{ form_widget(task_form, {'attr': {'class': 'form-control'}}) }}
+
+        {{ form_end(task_form) }}
+
+    </div>
+{% endblock %}

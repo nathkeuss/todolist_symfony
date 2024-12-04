@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Project;
+use App\Entity\Task;
 use App\Form\ProjectType;
+use App\Form\TaskType;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,4 +46,23 @@ class ProjectController extends AbstractController
         $formView = $form->createView();
         return $this->render('project/create_project.html.twig', compact('formView'));
     }
+
+    #[Route('/project/{id}/update', name: 'update_project')]
+    public function update(int $id, ProjectRepository $projectRepository, Request $request): Response {
+
+        $project = $projectRepository->find($id);
+
+        $project_form = $this->createForm(ProjectType::class, $project);
+
+        $task = new Task();
+        $task_form = $this->createForm(TaskType::class, $task);
+
+        return $this->render('project/update_project.html.twig', [
+            'project' => $project,
+            'project_form' => $project_form->createView(),
+            'task_form' => $task_form->createView(),
+        ]);
+    }
+
+
 }

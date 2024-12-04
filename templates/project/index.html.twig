@@ -11,18 +11,21 @@
             <a class="button-create" href="{{ path('create_project') }}">Créer un projet</a>
         </div>
         {% for project in projects %}
-            <h2>Nom du projet : {{ project.name }}</h2>
-            <p>Description du projet : {{ project.description }}</p>
-            <p>Tags :</p>
-            <ul>
-                {% for tag in project.tags %}
-                    <li>{{ tag.name }}</li>
-                {% endfor %}
-            </ul>
-            <div>
-                <img src="{{ project.image }}" alt="">
+            <div class="mb-5 project">
+                <h2>Nom du projet : {{ project.name }}</h2>
+                <p>Description du projet : {{ project.description }}</p>
+                <p>Tags :</p>
+                <ul>
+                    {% for tag in project.tags %}
+                        <li>{{ tag.name }}</li>
+                    {% endfor %}
+                </ul>
+                <div>
+                    <img src="{{ project.image }}" alt="">
+                </div>
+                <p>Date de création du projet : {{ project.createdAt | date('d/m/y h:i:s') }}</p>
+                <a class="button-create" href="{{ path('update_project', {id: project.id}) }}">Modifier le projet</a>
             </div>
-            <p>Date de création du projet : {{ project.createdAt | date('d/m/y h:i:s') }}</p>
         {% endfor %}
 
     </div>
