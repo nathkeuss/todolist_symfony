@@ -31,6 +31,11 @@ class Project
     #[ORM\JoinTable(name: 'tag_project')]
     private Collection $tags;
 
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

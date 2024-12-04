@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Project;
+use App\Entity\Tag;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,6 +22,11 @@ class ProjectType extends AbstractType
             ->add('name', TextType::class)
             ->add('description', TextAreaType::class)
             ->add('image', FileType::class)
+            ->add('tags', EntityType::class, [
+                'class' => Tag::class,
+                'multiple' => true,
+                'choice_label' => 'name',
+            ])
             ->add('Enregistrer', SubmitType::class)
         ;
     }
