@@ -36,6 +36,12 @@ class Project
         return $this->tags;
     }
 
+public function setTags(Collection $tags)
+{
+    $this->tags = $tags;
+    return $this;
+}
+
     public function getId(): ?int
     {
         return $this->id;

@@ -11,6 +11,12 @@
         {% for project in projects %}
             <h1>Nom du projet : {{ project.name }}</h1>
             <p>Description du projet : {{ project.description }}</p>
+            <p>Tags :</p>
+            <ul>
+                {% for tag in project.tags %}
+                    <li>{{ tag.name }}</li>
+                {% endfor %}
+            </ul>
             <div>
                 <img src="{{ project.image }}" alt="">
             </div>
