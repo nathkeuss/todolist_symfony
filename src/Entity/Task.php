@@ -44,7 +44,7 @@ class Task
     private Priority $priority;
 
     #[ORM\ManyToOne(targetEntity: Statut::class)]
-    private Statut $statut;
+    private Statut $status;
 
 
 

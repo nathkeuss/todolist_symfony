@@ -49,7 +49,6 @@ class ProjectController extends AbstractController
 
     #[Route('/project/{id}/update', name: 'update_project')]
     public function update(int $id, ProjectRepository $projectRepository, Request $request): Response {
-
         $project = $projectRepository->find($id);
 
         $project_form = $this->createForm(ProjectType::class, $project);
