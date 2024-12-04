@@ -39,6 +39,6 @@ class StatutController extends AbstractController
 
         $formView = $form->createView();
 
-        return $this->render('statut/create.html.twig', compact('formView'));
+        return $this->render('statut/create_statut.html.twig', compact('formView'));
     }
 }

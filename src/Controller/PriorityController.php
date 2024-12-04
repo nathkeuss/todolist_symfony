@@ -54,7 +54,7 @@ class PriorityController extends AbstractController
         $formView = $form->createView();
 
         // Rend la vue Twig pour la création avec le formulaire
-        return $this->render('priority/create.html.twig', compact('formView'));
+        return $this->render('priority/create_priority.html.twig', compact('formView'));
     }
 }
 
