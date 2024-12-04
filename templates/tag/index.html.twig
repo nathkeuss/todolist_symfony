@@ -6,7 +6,10 @@
 
     <div class="wrapper">
 
-        <a href="{{ path('create_tag') }}">Créer un tag</a>
+        <div class="d-flex justify-content-around">
+            <h1>Il y a {{ tags | length }} tags actuellement.</h1>
+            <a class="button-create" href="{{ path('create_tag') }}">Créer un tag</a>
+        </div>
 
         {% for tag in tags %}
             <p>{{ tag.name }}</p>

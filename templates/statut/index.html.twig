@@ -4,13 +4,15 @@
 
 {% block body %}
 
-<div class="example-wrapper">
+    <div class="example-wrapper">
 
-    <a href="{{ path('create_statut') }}">Créer un statut</a>
+        <div class="d-flex justify-content-around">
+            <h1>Il y a {{ status | length }} status actuellement.</h1>
+            <a class="button-create" href="{{ path('create_statut') }}">Créer un statut</a>
+        </div>
+        {% for statut in status %}
+            <p>{{ statut.name }}</p>
+        {% endfor %}
 
-    {% for statut in status %}
-        <p>{{ statut.name }}</p>
-    {% endfor %}
-
-</div>
+    </div>
 {% endblock %}

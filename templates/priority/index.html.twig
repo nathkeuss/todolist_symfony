@@ -9,13 +9,17 @@
 
     <div class="example-wrapper">
 
-        {# Lien vers la page de création de priorités. Utilise la route `create_priority`. #}
-        <a href="{{ path('create_priority') }}">Créer une priorité</a>
+        <div class="d-flex justify-content-around">
+            <h1>Il y a {{ priorities | length }} priorités actuellement</h1>
+
+            {# Lien vers la page de création de priorités. Utilise la route `create_priority`. #}
+            <a class="button-create" href="{{ path('create_priority') }}">Créer une priorité</a>
+        </div>
 
         {# Parcourt toutes les priorités passées à la vue.
        Affiche le nom et le niveau de chaque priorité. #}
         {% for priority in priorities %}
-            <h1>{{ priority.name }}</h1> {# Affiche le nom de la priorité. #}
+            <h2>{{ priority.name }}</h2> {# Affiche le nom de la priorité. #}
             <p>{{ priority.level }}</p> {# Affiche le niveau de la priorité. #}
         {% endfor %}
 
